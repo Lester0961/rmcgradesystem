@@ -1,0 +1,94 @@
+﻿Imports System.Data.SqlClient
+
+Public Class Login
+
+    ' Global variables to store logged-in user info (used across the app)
+    ' We'll move these to a Module later for better organization
+    Public Shared CurrentUserID As Integer = 0
+    Public Shared CurrentUsername As String = ""
+    Public Shared CurrentRole As String = ""
+    Public Shared CurrentStudentID As Integer = 0   ' 0 = not a student (Admin)
+
+    Private Sub login_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        ' Optional: Clear fields on load
+        txtUsername.Clear()
+        txtPassword.Clear()
+        txtUsername.Focus()
+        lblMessage.Text = ""
+    End Sub
+
+    Private Sub Btnok_Click(sender As Object, e As EventArgs) Handles btnok.Click
+        ' Basic input validation
+        If String.IsNullOrWhiteSpace(txtUsername.Text) OrElse String.IsNullOrWhiteSpace(txtPassword.Text) Then
+            lblMessage.Text = "Please enter both username and password."
+            txtUsername.Focus()
+            Return
+        End If
+
+        Dim username As String = txtUsername.Text.Trim()
+        Dim password As String = txtPassword.Text.Trim()
+
+        ' Use Try-Catch for database operations
+        Try
+            Using conn As SqlConnection = DBHelper.GetConnection()   ' We'll create DBHelper next
+                conn.Open()
+
+                Dim query As String = "SELECT UserID, Username, Role, ISNULL(StudentID, 0) AS StudentID FROM Users WHERE Username = @Username AND Password = @Password"
+
+                Using cmd As New SqlCommand(query, conn)
+                    cmd.Parameters.AddWithValue("@Username", username)
+                    cmd.Parameters.AddWithValue("@Password", password)   ' Plain text for student project
+
+                    Using reader As SqlDataReader = cmd.ExecuteReader()
+                        If reader.Read() Then
+                            ' Login successful
+                            CurrentUserID = Convert.ToInt32(reader("UserID"))
+                            CurrentUsername = reader("Username").ToString()
+                            CurrentRole = reader("Role").ToString()
+                            CurrentStudentID = Convert.ToInt32(reader("StudentID"))
+
+                            lblMessage.ForeColor = Color.Green
+                            lblMessage.Text = "Login successful! Loading dashboard..."
+
+                            ' Small delay for user feedback (optional)
+                            System.Threading.Thread.Sleep(800)
+
+                            ' Hide login form and show main dashboard form
+                            Me.Hide()
+                            ' Note: Configure your main/dashboard form in Application.myapp and set as StartupForm
+                            ' Or instantiate and show the main form here:
+                            ' Dim mainForm As New MainForm()
+                            ' mainForm.Show()
+
+                            ' Optional: Clear sensitive data
+                            txtPassword.Clear()
+                        Else
+                            ' Invalid credentials
+                            lblMessage.ForeColor = Color.Red
+                            lblMessage.Text = "Invalid username or password. Please try again."
+                            txtPassword.Clear()
+                            txtPassword.Focus()
+                        End If
+                    End Using
+                End Using
+            End Using
+
+        Catch ex As Exception
+            MessageBox.Show("Database error during login: " & ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            lblMessage.Text = "An error occurred. Please try again later."
+        End Try
+    End Sub
+
+    Private Sub btncancel_Click(sender As Object, e As EventArgs) Handles btncancel.Click
+        Application.Exit()
+    End Sub
+
+    ' Optional: Allow Enter key in password box to trigger login
+    Private Sub txtPassword_KeyDown(sender As Object, e As KeyEventArgs) Handles txtPassword.KeyDown
+        If e.KeyCode = Keys.Enter Then
+            btnok.PerformClick()
+            e.SuppressKeyPress = True   ' Prevent beep sound
+        End If
+    End Sub
+
+End Class

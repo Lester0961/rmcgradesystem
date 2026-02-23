@@ -1,0 +1,13 @@
+C:\Users\john\source\repos\rmcsystem\rmcsystem\obj\Debug\rmcsystem.vbproj.AssemblyReference.cache
+C:\Users\john\source\repos\rmcsystem\rmcsystem\obj\Debug\rmcsystem.login.resources
+C:\Users\john\source\repos\rmcsystem\rmcsystem\obj\Debug\rmcsystem.Resources.resources
+C:\Users\john\source\repos\rmcsystem\rmcsystem\obj\Debug\rmcsystem.vbproj.GenerateResource.cache
+C:\Users\john\source\repos\rmcsystem\rmcsystem\obj\Debug\rmcsystem.vbproj.CoreCompileInputs.cache
+C:\Users\john\source\repos\rmcsystem\rmcsystem\bin\Debug\rmcsystem.exe.config
+C:\Users\john\source\repos\rmcsystem\rmcsystem\bin\Debug\rmcsystem.exe
+C:\Users\john\source\repos\rmcsystem\rmcsystem\bin\Debug\rmcsystem.pdb
+C:\Users\john\source\repos\rmcsystem\rmcsystem\bin\Debug\rmcsystem.xml
+C:\Users\john\source\repos\rmcsystem\rmcsystem\obj\Debug\rmcsystem.exe
+C:\Users\john\source\repos\rmcsystem\rmcsystem\obj\Debug\rmcsystem.xml
+C:\Users\john\source\repos\rmcsystem\rmcsystem\obj\Debug\rmcsystem.pdb
+C:\Users\john\source\repos\rmcsystem\rmcsystem\obj\Debug\rmcsystem.frmMDIParent.resources
