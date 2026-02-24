@@ -1,5 +1,7 @@
 ﻿Module MainModule
 
+    Public IsExiting As Boolean = False  ' Add this flag
+
     Sub Main()
         Application.EnableVisualStyles()
         Application.SetCompatibleTextRenderingDefault(False)
@@ -9,10 +11,12 @@
                 Dim loginForm As New Login()
                 loginForm.ShowDialog()
 
+                If IsExiting Then Exit Do  ' Respect exit flag
+
                 If CurrentUser.CurrentUserID > 0 Then
                     Application.Run(New frmMDIParent())
                 Else
-                    Exit Do ' User closed login without logging in
+                    Exit Do
                 End If
             Loop
 

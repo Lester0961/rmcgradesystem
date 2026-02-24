@@ -64,7 +64,14 @@ Public Class Login
     End Sub
 
     Private Sub btnExit_Click(sender As Object, e As EventArgs) Handles btnExit.Click
+        MainModule.IsExiting = True
         Application.Exit()
+    End Sub
+
+    Private Sub Login_FormClosing(sender As Object, e As FormClosingEventArgs) Handles MyBase.FormClosing
+        If e.CloseReason = CloseReason.UserClosing AndAlso CurrentUser.CurrentUserID = 0 Then
+            MainModule.IsExiting = True
+        End If
     End Sub
 
     Private Sub txtPassword_KeyDown(sender As Object, e As KeyEventArgs) Handles txtPassword.KeyDown

@@ -87,7 +87,7 @@ Partial Class frmMDIParent
         'mnuPostGrade
         '
         Me.mnuPostGrade.Name = "mnuPostGrade"
-        Me.mnuPostGrade.Size = New System.Drawing.Size(136, 22)
+        Me.mnuPostGrade.Size = New System.Drawing.Size(180, 22)
         Me.mnuPostGrade.Text = "&Post Grades"
         '
         'mnuView
@@ -100,7 +100,7 @@ Partial Class frmMDIParent
         'mnuViewGrades
         '
         Me.mnuViewGrades.Name = "mnuViewGrades"
-        Me.mnuViewGrades.Size = New System.Drawing.Size(130, 22)
+        Me.mnuViewGrades.Size = New System.Drawing.Size(180, 22)
         Me.mnuViewGrades.Text = "My &Grades"
         '
         'frmMDIParent
@@ -112,6 +112,7 @@ Partial Class frmMDIParent
         Me.IsMdiContainer = True
         Me.Name = "frmMDIParent"
         Me.Text = "Student Grade Management System - Dashboard"
+        Me.WindowState = System.Windows.Forms.FormWindowState.Maximized
         Me.mnuMain.ResumeLayout(False)
         Me.mnuMain.PerformLayout()
         Me.ResumeLayout(False)

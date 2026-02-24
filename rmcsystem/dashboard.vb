@@ -31,10 +31,9 @@
     End Sub
 
     Private Sub mnuPostGrade_Click(sender As Object, e As EventArgs) Handles mnuPostGrade.Click
-        'Dim frm As New frmGradeInput()
-        'frm.MdiParent = Me
-        'frm.Show()
-        MessageBox.Show("Grade input coming soon.", "Info")
+        Dim frm As New frmGradeInput()
+        frm.MdiParent = Me
+        frm.Show()
     End Sub
 
     Private Sub mnuViewGrades_Click(sender As Object, e As EventArgs) Handles mnuViewGrades.Click
@@ -51,11 +50,18 @@
             child.Close()
         Next
 
-        Me.Close() ' Sub Main's loop will reopen Login automatically
+        Me.Close() ' Loop will reopen Login
     End Sub
 
     Private Sub mnuExit_Click(sender As Object, e As EventArgs) Handles mnuExit.Click
-        Application.Exit()
+        Dim confirm As DialogResult = MessageBox.Show(
+        "Are you sure you want to exit the application?",
+        "Confirm Exit", MessageBoxButtons.YesNo, MessageBoxIcon.Question)
+
+        If confirm = DialogResult.Yes Then
+            MainModule.IsExiting = True  ' Set flag BEFORE closing
+            Application.Exit()
+        End If
     End Sub
 
 End Class

@@ -11,3 +11,4 @@ C:\Users\john\source\repos\rmcsystem\rmcsystem\obj\Debug\rmcsystem.exe
 C:\Users\john\source\repos\rmcsystem\rmcsystem\obj\Debug\rmcsystem.xml
 C:\Users\john\source\repos\rmcsystem\rmcsystem\obj\Debug\rmcsystem.pdb
 C:\Users\john\source\repos\rmcsystem\rmcsystem\obj\Debug\rmcsystem.frmMDIParent.resources
+C:\Users\john\source\repos\rmcsystem\rmcsystem\obj\Debug\rmcsystem.frmGradeInput.resources
