@@ -6,11 +6,11 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{D369D375-F276-4019-A697-4A0310E61F8D}</ProjectGuid>
     <OutputType>WinExe</OutputType>
-    <StartupObject>Sub Main</StartupObject>
+    <StartupObject>rmcsystem.My.MyApplication</StartupObject>
     <RootNamespace>rmcsystem</RootNamespace>
     <AssemblyName>rmcsystem</AssemblyName>
     <FileAlignment>512</FileAlignment>
-    <MyType>WindowsFormsWithCustomSubMain</MyType>
+    <MyType>WindowsForms</MyType>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <Deterministic>true</Deterministic>
@@ -86,11 +86,16 @@
     <Compile Include="login.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="MainModule.vb" />
     <Compile Include="Manage Grades.Designer.vb">
       <DependentUpon>Manage Grades.vb</DependentUpon>
     </Compile>
     <Compile Include="Manage Grades.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Manage Students.Designer.vb">
+      <DependentUpon>Manage Students.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Manage Students.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="My Project\AssemblyInfo.vb" />
@@ -109,6 +114,12 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <Compile Include="View Grades.Designer.vb">
+      <DependentUpon>View Grades.vb</DependentUpon>
+    </Compile>
+    <Compile Include="View Grades.vb">
+      <SubType>Form</SubType>
     </Compile>
   </ItemGroup>
   <ItemGroup>

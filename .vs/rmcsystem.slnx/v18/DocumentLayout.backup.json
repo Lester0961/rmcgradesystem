@@ -3,32 +3,48 @@
   "WorkspaceRootPath": "C:\\Users\\john\\source\\repos\\rmcsystem\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{D369D375-F276-4019-A697-4A0310E61F8D}|rmcsystem\\rmcsystem.vbproj|C:\\Users\\john\\source\\repos\\rmcsystem\\rmcsystem\\login.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}",
-      "RelativeMoniker": "D:0:0:{D369D375-F276-4019-A697-4A0310E61F8D}|rmcsystem\\rmcsystem.vbproj|solutionrelative:rmcsystem\\login.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{D369D375-F276-4019-A697-4A0310E61F8D}|rmcsystem\\rmcsystem.vbproj|C:\\Users\\john\\source\\repos\\rmcsystem\\rmcsystem\\dashboard.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}",
       "RelativeMoniker": "D:0:0:{D369D375-F276-4019-A697-4A0310E61F8D}|rmcsystem\\rmcsystem.vbproj|solutionrelative:rmcsystem\\dashboard.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{D369D375-F276-4019-A697-4A0310E61F8D}|rmcsystem\\rmcsystem.vbproj|C:\\Users\\john\\source\\repos\\rmcsystem\\rmcsystem\\mainmodule.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}",
-      "RelativeMoniker": "D:0:0:{D369D375-F276-4019-A697-4A0310E61F8D}|rmcsystem\\rmcsystem.vbproj|solutionrelative:rmcsystem\\mainmodule.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}"
+      "AbsoluteMoniker": "D:0:0:{D369D375-F276-4019-A697-4A0310E61F8D}|rmcsystem\\rmcsystem.vbproj|c:\\users\\john\\source\\repos\\rmcsystem\\rmcsystem\\manage students.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}",
+      "RelativeMoniker": "D:0:0:{D369D375-F276-4019-A697-4A0310E61F8D}|rmcsystem\\rmcsystem.vbproj|solutionrelative:rmcsystem\\manage students.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{D369D375-F276-4019-A697-4A0310E61F8D}|rmcsystem\\rmcsystem.vbproj|C:\\Users\\john\\source\\repos\\rmcsystem\\rmcsystem\\dashboard.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}|Form",
       "RelativeMoniker": "D:0:0:{D369D375-F276-4019-A697-4A0310E61F8D}|rmcsystem\\rmcsystem.vbproj|solutionrelative:rmcsystem\\dashboard.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{D369D375-F276-4019-A697-4A0310E61F8D}|rmcsystem\\rmcsystem.vbproj|c:\\users\\john\\source\\repos\\rmcsystem\\rmcsystem\\manage grades.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}",
+      "AbsoluteMoniker": "D:0:0:{D369D375-F276-4019-A697-4A0310E61F8D}|rmcsystem\\rmcsystem.vbproj|C:\\Users\\john\\source\\repos\\rmcsystem\\rmcsystem\\view grades.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}",
+      "RelativeMoniker": "D:0:0:{D369D375-F276-4019-A697-4A0310E61F8D}|rmcsystem\\rmcsystem.vbproj|solutionrelative:rmcsystem\\view grades.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D369D375-F276-4019-A697-4A0310E61F8D}|rmcsystem\\rmcsystem.vbproj|C:\\Users\\john\\source\\repos\\rmcsystem\\rmcsystem\\manage students.designer.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}",
+      "RelativeMoniker": "D:0:0:{D369D375-F276-4019-A697-4A0310E61F8D}|rmcsystem\\rmcsystem.vbproj|solutionrelative:rmcsystem\\manage students.designer.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D369D375-F276-4019-A697-4A0310E61F8D}|rmcsystem\\rmcsystem.vbproj|C:\\Users\\john\\source\\repos\\rmcsystem\\rmcsystem\\manage grades.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}",
       "RelativeMoniker": "D:0:0:{D369D375-F276-4019-A697-4A0310E61F8D}|rmcsystem\\rmcsystem.vbproj|solutionrelative:rmcsystem\\manage grades.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{D369D375-F276-4019-A697-4A0310E61F8D}|rmcsystem\\rmcsystem.vbproj|c:\\users\\john\\source\\repos\\rmcsystem\\rmcsystem\\manage grades.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}|Form",
+      "AbsoluteMoniker": "D:0:0:{D369D375-F276-4019-A697-4A0310E61F8D}|rmcsystem\\rmcsystem.vbproj|C:\\Users\\john\\source\\repos\\rmcsystem\\rmcsystem\\manage grades.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}|Form",
       "RelativeMoniker": "D:0:0:{D369D375-F276-4019-A697-4A0310E61F8D}|rmcsystem\\rmcsystem.vbproj|solutionrelative:rmcsystem\\manage grades.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{D369D375-F276-4019-A697-4A0310E61F8D}|rmcsystem\\rmcsystem.vbproj|c:\\users\\john\\source\\repos\\rmcsystem\\rmcsystem\\my project\\dbhelper.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}",
+      "AbsoluteMoniker": "D:0:0:{D369D375-F276-4019-A697-4A0310E61F8D}|rmcsystem\\rmcsystem.vbproj|C:\\Users\\john\\source\\repos\\rmcsystem\\rmcsystem\\login.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}",
+      "RelativeMoniker": "D:0:0:{D369D375-F276-4019-A697-4A0310E61F8D}|rmcsystem\\rmcsystem.vbproj|solutionrelative:rmcsystem\\login.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D369D375-F276-4019-A697-4A0310E61F8D}|rmcsystem\\rmcsystem.vbproj|C:\\Users\\john\\source\\repos\\rmcsystem\\rmcsystem\\my project\\dbhelper.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}",
       "RelativeMoniker": "D:0:0:{D369D375-F276-4019-A697-4A0310E61F8D}|rmcsystem\\rmcsystem.vbproj|solutionrelative:rmcsystem\\my project\\dbhelper.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D369D375-F276-4019-A697-4A0310E61F8D}|rmcsystem\\rmcsystem.vbproj|C:\\Users\\john\\source\\repos\\rmcsystem\\rmcsystem\\view grades.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}|Form",
+      "RelativeMoniker": "D:0:0:{D369D375-F276-4019-A697-4A0310E61F8D}|rmcsystem\\rmcsystem.vbproj|solutionrelative:rmcsystem\\view grades.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D369D375-F276-4019-A697-4A0310E61F8D}|rmcsystem\\rmcsystem.vbproj|C:\\Users\\john\\source\\repos\\rmcsystem\\rmcsystem\\manage students.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}|Form",
+      "RelativeMoniker": "D:0:0:{D369D375-F276-4019-A697-4A0310E61F8D}|rmcsystem\\rmcsystem.vbproj|solutionrelative:rmcsystem\\manage students.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}|Form"
     },
     {
       "AbsoluteMoniker": "D:0:0:{D369D375-F276-4019-A697-4A0310E61F8D}|rmcsystem\\rmcsystem.vbproj|C:\\Users\\john\\source\\repos\\rmcsystem\\rmcsystem\\currentuser.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}",
@@ -46,21 +62,24 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 9,
+          "SelectedChildIndex": 7,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 8,
               "Title": "DBHelper.vb",
               "DocumentMoniker": "C:\\Users\\john\\source\\repos\\rmcsystem\\rmcsystem\\My Project\\DBHelper.vb",
               "RelativeDocumentMoniker": "rmcsystem\\My Project\\DBHelper.vb",
               "ToolTip": "C:\\Users\\john\\source\\repos\\rmcsystem\\rmcsystem\\My Project\\DBHelper.vb",
               "RelativeToolTip": "rmcsystem\\My Project\\DBHelper.vb",
-              "ViewState": "AgIAAE0AAAAAAAAAAAAwwGsAAAAKAAAAAAAAAA==",
+              "ViewState": "AgIAACYAAAAAAAAAAAAYwD0AAAAaAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003361|",
               "WhenOpened": "2026-02-23T03:35:15.88Z",
-              "IsPinned": true,
-              "EditorCaption": ""
+              "IsPinned": true
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
             },
             {
               "$type": "Bookmark",
@@ -73,70 +92,103 @@
             {
               "$type": "Document",
               "DocumentIndex": 4,
-              "Title": "Manage Grades.vb",
-              "DocumentMoniker": "C:\\Users\\john\\source\\repos\\rmcsystem\\rmcsystem\\Manage Grades.vb",
-              "RelativeDocumentMoniker": "rmcsystem\\Manage Grades.vb",
-              "ToolTip": "C:\\Users\\john\\source\\repos\\rmcsystem\\rmcsystem\\Manage Grades.vb",
-              "RelativeToolTip": "rmcsystem\\Manage Grades.vb",
-              "ViewState": "AgIAAAcAAAAAAAAAAAAgwFMAAAALAAAAAAAAAA==",
+              "Title": "Manage Students.Designer.vb",
+              "DocumentMoniker": "C:\\Users\\john\\source\\repos\\rmcsystem\\rmcsystem\\Manage Students.Designer.vb",
+              "RelativeDocumentMoniker": "rmcsystem\\Manage Students.Designer.vb",
+              "ToolTip": "C:\\Users\\john\\source\\repos\\rmcsystem\\rmcsystem\\Manage Students.Designer.vb",
+              "RelativeToolTip": "rmcsystem\\Manage Students.Designer.vb",
+              "ViewState": "AgIAAOoAAAAAAAAAAAAAwCEBAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003361|",
-              "WhenOpened": "2026-02-24T01:00:12.866Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-02-24T17:38:51.471Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "Manage Grades.vb [Design]",
-              "DocumentMoniker": "C:\\Users\\john\\source\\repos\\rmcsystem\\rmcsystem\\Manage Grades.vb",
-              "RelativeDocumentMoniker": "rmcsystem\\Manage Grades.vb",
-              "ToolTip": "C:\\Users\\john\\source\\repos\\rmcsystem\\rmcsystem\\Manage Grades.vb [Design]",
-              "RelativeToolTip": "rmcsystem\\Manage Grades.vb [Design]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003361|",
-              "WhenOpened": "2026-02-24T00:58:06.251Z",
-              "EditorCaption": " [Design]"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 11,
               "Title": "CurrentUser.vb",
               "DocumentMoniker": "C:\\Users\\john\\source\\repos\\rmcsystem\\rmcsystem\\CurrentUser.vb",
               "RelativeDocumentMoniker": "rmcsystem\\CurrentUser.vb",
               "ToolTip": "C:\\Users\\john\\source\\repos\\rmcsystem\\rmcsystem\\CurrentUser.vb",
               "RelativeToolTip": "rmcsystem\\CurrentUser.vb",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABgAAAAKAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003361|",
-              "WhenOpened": "2026-02-23T17:19:21.782Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-02-23T17:19:21.782Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "MainModule.vb",
-              "DocumentMoniker": "C:\\Users\\john\\source\\repos\\rmcsystem\\rmcsystem\\MainModule.vb",
-              "RelativeDocumentMoniker": "rmcsystem\\MainModule.vb",
-              "ToolTip": "C:\\Users\\john\\source\\repos\\rmcsystem\\rmcsystem\\MainModule.vb",
-              "RelativeToolTip": "rmcsystem\\MainModule.vb",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABwAAAAKAAAAAAAAAA==",
+              "DocumentIndex": 3,
+              "Title": "View Grades.vb",
+              "DocumentMoniker": "C:\\Users\\john\\source\\repos\\rmcsystem\\rmcsystem\\View Grades.vb",
+              "RelativeDocumentMoniker": "rmcsystem\\View Grades.vb",
+              "ToolTip": "C:\\Users\\john\\source\\repos\\rmcsystem\\rmcsystem\\View Grades.vb",
+              "RelativeToolTip": "rmcsystem\\View Grades.vb",
+              "ViewState": "AgIAAEwAAAAAAAAAAAAYwFMAAAAtAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003361|",
-              "WhenOpened": "2026-02-23T17:12:06.584Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-02-24T15:44:58.243Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 0,
               "Title": "dashboard.vb",
               "DocumentMoniker": "C:\\Users\\john\\source\\repos\\rmcsystem\\rmcsystem\\dashboard.vb",
               "RelativeDocumentMoniker": "rmcsystem\\dashboard.vb",
               "ToolTip": "C:\\Users\\john\\source\\repos\\rmcsystem\\rmcsystem\\dashboard.vb",
               "RelativeToolTip": "rmcsystem\\dashboard.vb",
-              "ViewState": "AgIAACUAAAAAAAAAAAAgwEAAAAALAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003361|",
-              "WhenOpened": "2026-02-23T16:40:52.564Z",
+              "WhenOpened": "2026-02-24T15:42:06.141Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 5,
+              "Title": "Manage Grades.vb",
+              "DocumentMoniker": "C:\\Users\\john\\source\\repos\\rmcsystem\\rmcsystem\\Manage Grades.vb",
+              "RelativeDocumentMoniker": "rmcsystem\\Manage Grades.vb",
+              "ToolTip": "C:\\Users\\john\\source\\repos\\rmcsystem\\rmcsystem\\Manage Grades.vb",
+              "RelativeToolTip": "rmcsystem\\Manage Grades.vb",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAyAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003361|",
+              "WhenOpened": "2026-02-24T01:00:12.866Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Manage Students.vb",
+              "DocumentMoniker": "C:\\Users\\john\\source\\repos\\rmcsystem\\rmcsystem\\Manage Students.vb",
+              "RelativeDocumentMoniker": "rmcsystem\\Manage Students.vb",
+              "ToolTip": "C:\\Users\\john\\source\\repos\\rmcsystem\\rmcsystem\\Manage Students.vb",
+              "RelativeToolTip": "rmcsystem\\Manage Students.vb",
+              "ViewState": "AgIAALwAAAAAAAAAAAAAwMoAAAALAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003361|",
+              "WhenOpened": "2026-02-24T15:43:58.997Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "login.vb",
+              "DocumentMoniker": "C:\\Users\\john\\source\\repos\\rmcsystem\\rmcsystem\\login.vb",
+              "RelativeDocumentMoniker": "rmcsystem\\login.vb",
+              "ToolTip": "C:\\Users\\john\\source\\repos\\rmcsystem\\rmcsystem\\login.vb",
+              "RelativeToolTip": "rmcsystem\\login.vb",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAQwCUAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003361|",
+              "WhenOpened": "2026-02-23T03:13:53.078Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "login.vb [Design]",
+              "DocumentMoniker": "C:\\Users\\john\\source\\repos\\rmcsystem\\rmcsystem\\login.vb",
+              "RelativeDocumentMoniker": "rmcsystem\\login.vb",
+              "ToolTip": "C:\\Users\\john\\source\\repos\\rmcsystem\\rmcsystem\\login.vb [Design]",
+              "RelativeToolTip": "rmcsystem\\login.vb [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003361|",
+              "WhenOpened": "2026-02-23T03:13:46.484Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
               "Title": "dashboard.vb [Design]",
               "DocumentMoniker": "C:\\Users\\john\\source\\repos\\rmcsystem\\rmcsystem\\dashboard.vb",
               "RelativeDocumentMoniker": "rmcsystem\\dashboard.vb",
@@ -148,28 +200,36 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "login.vb",
-              "DocumentMoniker": "C:\\Users\\john\\source\\repos\\rmcsystem\\rmcsystem\\login.vb",
-              "RelativeDocumentMoniker": "rmcsystem\\login.vb",
-              "ToolTip": "C:\\Users\\john\\source\\repos\\rmcsystem\\rmcsystem\\login.vb",
-              "RelativeToolTip": "rmcsystem\\login.vb",
-              "ViewState": "AgIAADUAAAAAAAAAAAAowEUAAAAAAAAAAAAAAA==",
+              "DocumentIndex": 9,
+              "Title": "View Grades.vb [Design]",
+              "DocumentMoniker": "C:\\Users\\john\\source\\repos\\rmcsystem\\rmcsystem\\View Grades.vb",
+              "RelativeDocumentMoniker": "rmcsystem\\View Grades.vb",
+              "ToolTip": "C:\\Users\\john\\source\\repos\\rmcsystem\\rmcsystem\\View Grades.vb [Design]",
+              "RelativeToolTip": "rmcsystem\\View Grades.vb [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003361|",
-              "WhenOpened": "2026-02-23T03:13:53.078Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-02-24T15:44:52.085Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "login.vb [Design]",
-              "DocumentMoniker": "C:\\Users\\john\\source\\repos\\rmcsystem\\rmcsystem\\login.vb",
-              "RelativeDocumentMoniker": "rmcsystem\\login.vb",
-              "ToolTip": "C:\\Users\\john\\source\\repos\\rmcsystem\\rmcsystem\\login.vb [Design]",
-              "RelativeToolTip": "rmcsystem\\login.vb [Design]",
+              "DocumentIndex": 10,
+              "Title": "Manage Students.vb [Design]",
+              "DocumentMoniker": "C:\\Users\\john\\source\\repos\\rmcsystem\\rmcsystem\\Manage Students.vb",
+              "RelativeDocumentMoniker": "rmcsystem\\Manage Students.vb",
+              "ToolTip": "C:\\Users\\john\\source\\repos\\rmcsystem\\rmcsystem\\Manage Students.vb [Design]",
+              "RelativeToolTip": "rmcsystem\\Manage Students.vb [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003361|",
-              "WhenOpened": "2026-02-23T03:13:46.484Z",
-              "EditorCaption": " [Design]"
+              "WhenOpened": "2026-02-24T15:43:54.007Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "Manage Grades.vb [Design]",
+              "DocumentMoniker": "C:\\Users\\john\\source\\repos\\rmcsystem\\rmcsystem\\Manage Grades.vb",
+              "RelativeDocumentMoniker": "rmcsystem\\Manage Grades.vb",
+              "ToolTip": "C:\\Users\\john\\source\\repos\\rmcsystem\\rmcsystem\\Manage Grades.vb [Design]",
+              "RelativeToolTip": "rmcsystem\\Manage Grades.vb [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003361|",
+              "WhenOpened": "2026-02-24T14:58:32.423Z"
             }
           ]
         }

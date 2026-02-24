@@ -1,108 +1,75 @@
 ﻿Imports System.Data.SqlClient
-Imports System.Windows.Forms
 
 Module DBHelper
-
-    Public ReadOnly Property ConnectionString As String
-        Get
-            Return "Data Source=LESTER\SQLEXPRESS;Initial Catalog=rmcdb;Integrated Security=True;Persist Security Info=False;Pooling=False;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=True;Application Name="
-        End Get
-    End Property
+    Public Const ConnStr As String = "Data Source=.\SQLEXPRESS;Initial Catalog=StudentGradesDB;Integrated Security=True;TrustServerCertificate=True;"
 
     Public Function GetConnection() As SqlConnection
-        Return New SqlConnection(ConnectionString)
+        Return New SqlConnection(ConnStr)
     End Function
-
-    Public Function GetOpenConnection() As SqlConnection
-        Dim conn As New SqlConnection(ConnectionString)
-        Try
-            conn.Open()
-            Return conn
-        Catch ex As Exception
-            MessageBox.Show("Database connection failed!" & vbCrLf & vbCrLf & ex.Message, "Connection Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
-            Return Nothing
-        End Try
-    End Function
-
-    Public Function GetDataTable(query As String, Optional parameters As Dictionary(Of String, Object) = Nothing) As DataTable
+    Public Function GetDataTable(query As String, Optional params As SqlParameter() = Nothing) As DataTable
         Dim dt As New DataTable()
 
-        Using conn As SqlConnection = GetOpenConnection()
-            If conn Is Nothing Then Return dt
+        Try
+            Using conn As SqlConnection = GetConnection()
+                Using cmd As New SqlCommand(query, conn)
+                    If params IsNot Nothing Then
+                        cmd.Parameters.AddRange(params)
+                    End If
 
-            Using cmd As New SqlCommand(query, conn)
-                If parameters IsNot Nothing Then
-                    For Each param In parameters
-                        cmd.Parameters.AddWithValue(param.Key, param.Value)
-                    Next
-                End If
-
-                Try
-                    Using adapter As New SqlDataAdapter(cmd)
-                        adapter.Fill(dt)
+                    Using da As New SqlDataAdapter(cmd)
+                        conn.Open()
+                        da.Fill(dt)
                     End Using
-                Catch ex As Exception
-                    MessageBox.Show("Error loading data:" & vbCrLf & ex.Message, "Database Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
-                End Try
+                End Using
             End Using
-        End Using
+        Catch ex As Exception
+            MessageBox.Show("Database error (GetDataTable): " & ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+        End Try
 
         Return dt
     End Function
 
-    Public Function ExecuteNonQuery(query As String, Optional parameters As Dictionary(Of String, Object) = Nothing) As Integer
-        Dim rowsAffected As Integer = 0
-
-        Using conn As SqlConnection = GetOpenConnection()
-            If conn Is Nothing Then Return -1
-
-            Using cmd As New SqlCommand(query, conn)
-                If parameters IsNot Nothing Then
-                    For Each param In parameters
-                        cmd.Parameters.AddWithValue(param.Key, param.Value)
-                    Next
-                End If
-
-                Try
-                    rowsAffected = cmd.ExecuteNonQuery()
-                Catch ex As Exception
-                    MessageBox.Show("Error executing command:" & vbCrLf & ex.Message, "Database Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
-                End Try
+    Public Sub ExecuteNonQuery(query As String, Optional params As SqlParameter() = Nothing)
+        Try
+            Using conn As SqlConnection = GetConnection()
+                conn.Open()
+                Using cmd As New SqlCommand(query, conn)
+                    If params IsNot Nothing Then
+                        cmd.Parameters.AddRange(params)
+                    End If
+                    cmd.ExecuteNonQuery()
+                End Using
             End Using
-        End Using
+        Catch ex As Exception
+            MessageBox.Show("Database error (ExecuteNonQuery): " & ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+        End Try
+    End Sub
 
-        Return rowsAffected
+    Public Function GetLastIdentity() As Integer
+        Dim dt As DataTable = GetDataTable("SELECT SCOPE_IDENTITY() AS LastID")
+        If dt.Rows.Count > 0 AndAlso Not IsDBNull(dt.Rows(0)("LastID")) Then
+            Return Convert.ToInt32(dt.Rows(0)("LastID"))
+        End If
+        Return 0
     End Function
-
-    Public Function ExecuteScalar(query As String, Optional parameters As Dictionary(Of String, Object) = Nothing) As Object
-        Dim result As Object = Nothing
-
-        Using conn As SqlConnection = GetOpenConnection()
-            If conn Is Nothing Then Return -1
-
-            Using cmd As New SqlCommand(query, conn)
-                If parameters IsNot Nothing Then
-                    For Each param In parameters
-                        cmd.Parameters.AddWithValue(param.Key, param.Value)
-                    Next
-                End If
-
-                Try
-                    result = cmd.ExecuteScalar()
-                Catch ex As Exception
-                    MessageBox.Show("Scalar query failed:" & vbCrLf & ex.Message, "Database Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
-                End Try
+    Public Function ExecuteInsertGetID(query As String, Optional params As SqlParameter() = Nothing) As Integer
+        Try
+            Using conn As SqlConnection = GetConnection()
+                conn.Open()
+                Using cmd As New SqlCommand(query & "; SELECT SCOPE_IDENTITY();", conn)
+                    If params IsNot Nothing Then
+                        cmd.Parameters.AddRange(params)
+                    End If
+                    Dim result = cmd.ExecuteScalar()
+                    If result IsNot Nothing AndAlso Not IsDBNull(result) Then
+                        Return Convert.ToInt32(result)
+                    End If
+                End Using
             End Using
-        End Using
-
-        Return result
-    End Function
-
-    Public Function UsernameExists(username As String) As Boolean
-        Dim query As String = "SELECT COUNT(*) FROM Users WHERE Username = @user"
-        Dim param As New Dictionary(Of String, Object) From {{"@user", username}}
-        Dim count As Integer = Convert.ToInt32(ExecuteScalar(query, param))
-        Return count > 0
+        Catch ex As Exception
+            MessageBox.Show("Database error (ExecuteInsertGetID): " & ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+        End Try
+        Return 0
     End Function
 
 End Module

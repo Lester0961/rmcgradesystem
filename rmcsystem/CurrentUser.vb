@@ -1,23 +1,25 @@
 ﻿Module CurrentUser
 
-    Public CurrentUserID As Integer = 0
     Public CurrentUsername As String = ""
     Public CurrentRole As String = ""
     Public CurrentStudentID As Integer = 0
 
-    Public Sub ClearCurrentUser()
-        CurrentUserID = 0
+    Public Sub ClearCurrent()
         CurrentUsername = ""
         CurrentRole = ""
         CurrentStudentID = 0
     End Sub
 
-    Public Function IsAdmin() As Boolean
-        Return CurrentRole = "Admin"
-    End Function
+    Public ReadOnly Property IsAdmin As Boolean
+        Get
+            Return CurrentRole = "Admin"
+        End Get
+    End Property
 
-    Public Function IsStudent() As Boolean
-        Return CurrentRole = "Student"
-    End Function
+    Public ReadOnly Property IsStudent As Boolean
+        Get
+            Return CurrentRole = "Student"
+        End Get
+    End Property
 
 End Module
