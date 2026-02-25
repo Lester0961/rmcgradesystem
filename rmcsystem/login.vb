@@ -1,6 +1,6 @@
 ﻿Imports System.Data.SqlClient
 
-Public Class frmLogin
+Public Class FrmLogin
 
     Private Sub BtnLogin_Click(sender As Object, e As EventArgs) Handles btnLogin.Click
         If String.IsNullOrWhiteSpace(txtUsername.Text) OrElse String.IsNullOrWhiteSpace(txtPassword.Text) Then
