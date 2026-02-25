@@ -30,9 +30,18 @@ A desktop-based **Student Grade Management System** built with **VB.NET (Windows
 
 - 🔐 **Role-Based Login** — Separate access for Admin and Student accounts
 - 👨‍🎓 **Student Management** — Add, update, delete, and view student records (Admin only)
+  - First and Last Name are forced **uppercase**
+  - Section follows strict format: `XXXX-X0` (e.g. `BSCS-B1`)
+  - Contact is limited to exactly **11 digits**
+  - Password is **visible while typing** for easy verification
 - 📝 **Grade Input** — Post term grades (Prelim, Midterm, Final) with weighted component calculation
-- 📊 **GWA Calculator** — Automatically computes General Weighted Average using numerical grade conversion
-- 📋 **Grade Viewer** — Students view their own grades; Admins view all
+  - Changing student clears all fields below
+  - Changing subject clears term and grade components
+  - Changing term clears grade components and calculated grade
+- 📊 **GWA Calculator** — Automatically computes General Weighted Average using numerical grade conversion (complete subjects only)
+- 📋 **Grade Viewer**
+  - **Admin** — sees a full-screen grade records table for all students
+  - **Student** — sees their own grade records, subject summary, GWA, and grading scale reference
 - 🔄 **MDI Interface** — Multi-Document Interface dashboard with menu-based navigation
 - ✅ **Input Validation** — Duplicate username detection, required field checks, and safe deletion with FK cascade handling
 
@@ -79,19 +88,25 @@ Grades         → GradeID, StudentID (FK), SubjectID (FK), Term, Score, DatePos
 ```
 Term Score   = (Quizzes × 30%) + (Assignments × 10%) + (Attendance × 10%) + (Projects × 20%) + (Exam × 30%)
 Weighted Avg = (Prelim × 30%) + (Midterm × 30%) + (Final × 40%)
-GWA          = Σ(NumericalGrade × Units) / Σ(Units)
+GWA          = Σ(NumericalGrade × Units) / Σ(Units)   ← complete subjects only
 ```
 
 **Numerical Grade Conversion:**
 
-| Percentage | Numerical Grade |
-|------------|----------------|
-| 96 – 100   | 1.00 |
-| 90 – 95    | 1.25 |
-| 85 – 89    | 1.50 |
-| 80 – 84    | 1.75 |
-| 75 – 79    | 2.00 |
-| Below 75   | 5.00 |
+| Percentage Range | Numerical Grade |
+|-----------------|----------------|
+| 98 – 100%       | 1.00 |
+| 95 – 97%        | 1.25 |
+| 93 – 94%        | 1.50 |
+| 90 – 92%        | 1.75 |
+| 87 – 89%        | 2.00 |
+| 84 – 86%        | 2.25 |
+| 81 – 83%        | 2.50 |
+| 79 – 80%        | 2.75 |
+| 75 – 78%        | 3.00 |
+| Below 75%       | 5.00 (Failed) |
+
+> **Note:** StudentIDs are permanently unique and never reused after deletion — this is intentional behavior matching real school ID systems.
 
 ---
 
@@ -101,7 +116,6 @@ GWA          = Σ(NumericalGrade × Units) / Σ(Units)
 rmcsystem/
 │
 ├── rmcsystem.sln                  # Solution file
-│
 ├── rmcsystem/
 │   ├── frmLogin.vb                # Login form
 │   ├── frmLogin.Designer.vb
@@ -181,8 +195,8 @@ CREATE TABLE Grades (
 GO
 
 -- Sample Data
-INSERT INTO Students VALUES ('Juan','Dela Cruz','BSIT-1A','09123456789'),
-                             ('Maria','Santos','BSIT-1B','09876543210');
+INSERT INTO Students VALUES ('JUAN','DELA CRUZ','BSIT-1A','09123456789'),
+                             ('MARIA','SANTOS','BSIT-1B','09876543210');
 
 INSERT INTO Subjects VALUES ('MATH101','Mathematics',3),
                              ('ENG101','English Communication',3),
@@ -206,8 +220,6 @@ GO
 
 ## 💻 How to Clone and Run via CMD
 
-Follow these steps exactly using **Command Prompt (CMD)**:
-
 ### Step 1 — Open Command Prompt
 
 Press `Win + R`, type `cmd`, press **Enter**.
@@ -220,7 +232,7 @@ Press `Win + R`, type `cmd`, press **Enter**.
 cd C:\Users\YourName\source\repos
 ```
 
-> Replace `YourName` with your actual Windows username, or navigate to any folder you prefer.
+> Replace `YourName` with your actual Windows username.
 
 ---
 
@@ -228,13 +240,6 @@ cd C:\Users\YourName\source\repos
 
 ```cmd
 git clone https://github.com/Lester0961/rmcgradesystem.git
-```
-
-Wait for the clone to complete. You should see output like:
-```
-Cloning into 'rmcgradesystem'...
-remote: Enumerating objects: ...
-Resolving deltas: done.
 ```
 
 ---
@@ -247,56 +252,36 @@ cd rmcgradesystem
 
 ---
 
-### Step 5 — Verify the files are there
-
-```cmd
-dir
-```
-
-You should see `rmcsystem.sln` listed among the files.
-
----
-
-### Step 6 — Open the solution in Visual Studio
+### Step 5 — Open the solution in Visual Studio
 
 ```cmd
 start rmcsystem.sln
 ```
 
-This will automatically launch **Visual Studio** and open the project.
+---
 
-> Alternatively, you can right-click `rmcsystem.sln` in File Explorer and choose **Open with Visual Studio**.
+### Step 6 — Set up the database
+
+Run the SQL script from the [Getting Started](#-getting-started) section in SSMS before running the app.
 
 ---
 
-### Step 7 — Restore and Build the project
+### Step 7 — Verify the database connection string
 
-Once Visual Studio is open:
-
-1. Wait for Visual Studio to finish loading the solution
-2. Go to **Build** → **Build Solution** (or press `Ctrl + Shift + B`)
-3. Confirm the Output window shows: `Build: 1 succeeded`
-
----
-
-### Step 8 — Verify the database connection
-
-Open `DBHelper.vb` and confirm the connection string matches your SQL Server instance:
+Open `DBHelper.vb` and confirm it matches your SQL Server instance:
 
 ```vb
-Public Const ConnStr As String = 
+Public Const ConnStr As String =
     "Data Source=.\SQLEXPRESS;Initial Catalog=StudentGradesDB;Integrated Security=True;TrustServerCertificate=True;"
 ```
 
-> If your SQL Server instance name is different (e.g., `SQLSERVER` or `MSSQLSERVER`), update `.\SQLEXPRESS` accordingly.
+> If your instance name differs (e.g., `SQLSERVER`), update `.\SQLEXPRESS` accordingly.
 
 ---
 
-### Step 9 — Run the application
+### Step 8 — Build and Run
 
-Press `F5` or click the **▶ Start** button in Visual Studio.
-
-The login form will appear. Use the sample credentials below.
+Press `Ctrl + Shift + B` to build, then `F5` to run.
 
 ---
 
@@ -315,31 +300,34 @@ The login form will appear. Use the sample credentials below.
 ### Admin Workflow
 
 1. **Login** as `admin`
-2. Use **Manage → Students** to add, update, or delete student records
-3. Use **Grades → Post Grades** to enter term grades per student/subject
-4. Use **Grades → View Grades** to see all student grades
-5. Click **File → Logout** or press the **X** to exit
+2. **Manage → Students** — add, update, or delete student records
+   - Names are forced uppercase automatically
+   - Section must follow `XXXX-X0` format (e.g. `BSCS-B1`)
+   - Contact must be exactly 11 digits
+   - Password is visible while typing
+3. **Grades → Post Grades** — select student → subject → term → enter components → Calculate → Post
+4. **Grades → View Grades** — full-screen table showing all student grade records
+5. **File → Logout** to sign out
 
 ---
 
 ### Student Workflow
 
 1. **Login** as a student (e.g., `juan`)
-2. Use **Grades → View Grades** to see your own grades
-3. Click **Calculate GWA** to compute your General Weighted Average
-4. Click **File → Logout** or press the **X** to exit
+2. **Grades → View Grades** — view your own grade records, subject summary, GWA, and grading scale
+3. **File → Logout** to sign out
 
 ---
 
 ## 🔐 Role Access Matrix
 
 | Feature | Admin | Student |
-|---------|-------|---------|
+|---------|:-----:|:-------:|
 | Manage Students | ✅ | ❌ |
 | Post Grades | ✅ | ❌ |
-| View All Grades | ✅ | ❌ |
-| View Own Grades | ✅ | ✅ |
-| Calculate GWA | ✅ | ✅ |
+| View All Grades (full table) | ✅ | ❌ |
+| View Own Grades + Summary | ❌ | ✅ |
+| View GWA & Grading Scale | ❌ | ✅ |
 | Logout / Exit | ✅ | ✅ |
 
 ---
@@ -348,6 +336,7 @@ The login form will appear. Use the sample credentials below.
 
 - Passwords are stored in **plain text** — for production use, implement password hashing (e.g., bcrypt)
 - No forgot password or password reset feature
+- StudentIDs never reset after deletion — this is **by design** (permanent unique identifiers)
 - Single-instance application (no multi-user concurrent access handling)
 - No export to PDF/Excel feature for grade reports
 
@@ -365,7 +354,7 @@ The login form will appear. Use the sample credentials below.
 
 ## 📄 License
 
-This project is licensed under the **MIT License** — feel free to use, modify, and distribute.
+This project is licensed under the **MIT License** 
 
 ---
 
