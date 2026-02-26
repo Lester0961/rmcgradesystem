@@ -43,7 +43,6 @@ Public Class FrmGradeInput
         End Try
     End Sub
 
-    ' ── Student changed → clear everything below (subject, term, components, result) ──
     Private Sub CboStudent_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cboStudent.SelectedIndexChanged
         If _loading Then Return
         _loading = True
@@ -64,14 +63,12 @@ Public Class FrmGradeInput
         ClearCalculatedGrade()
     End Sub
 
-    ' ── Term changed → clear only components and calculated grade ─────────────
     Private Sub CboTerm_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cboTerm.SelectedIndexChanged
         If _loading Then Return
         ClearComponents()
         ClearCalculatedGrade()
     End Sub
 
-    ' ── Helpers ───────────────────────────────────────────────────────────────
     Private Sub ClearComponents()
         nudQuizzes.Value = 0
         nudAssignments.Value = 0
@@ -85,9 +82,7 @@ Public Class FrmGradeInput
         btnPostGrade.Enabled = False
     End Sub
 
-    ' ─────────────────────────────────────────────────────────────────────────
     Private Sub BtnCalculateTerm_Click(sender As Object, e As EventArgs) Handles btnCalculateTerm.Click
-        ' Guard: student, subject, and term must be selected first
         If cboStudent.SelectedIndex < 0 Then
             MessageBox.Show("Please select a student first.", "Validation",
                             MessageBoxButtons.OK, MessageBoxIcon.Warning)
